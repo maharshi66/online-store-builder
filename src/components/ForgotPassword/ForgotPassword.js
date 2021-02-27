@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import {Form, Button, Card, Alert} from 'react-bootstrap';
 import { useAuth } from '../../contexts/AuthContext';
 import { Link } from 'react-router-dom';
+import BrandHeader from '../BrandHeader/BrandHeader';
 
 export default function ForgotPassword() {
 	const emailRef = useRef();
@@ -27,9 +28,7 @@ export default function ForgotPassword() {
 
 	return (
 		<>
-			<h1 className="f2 f1-ns brandText purple pointer tc mt4">
-			Purplish
-			</h1>
+	    	<BrandHeader className="f2 f1-ns pointer tc mt4" />
 			<Card 
 				className="mw6 center w-75 w-100-ns ma5"
 				bg="dark"

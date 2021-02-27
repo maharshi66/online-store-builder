@@ -3,6 +3,8 @@ import { Form, Button, Card, Alert } from 'react-bootstrap';
 import { useAuth } from '../../contexts/AuthContext';
 import { Link, useHistory } from 'react-router-dom';
 import "tachyons";
+import BrandHeader from '../BrandHeader/BrandHeader';
+
 
 export default function SignUp() {
 	const emailRef = useRef(); 
@@ -32,9 +34,9 @@ export default function SignUp() {
 	return (
 		<>
 	    	<Link to="/" style={{textDecoration: "none"}}>
-				<h1 className="f2 f1-ns brandText purple pointer tc mt4">
-				Purplish
-				</h1>
+		    	<div className="f2 f1-ns pointer tc mt4">
+			    	<BrandHeader  />
+		    	</div>
 	    	</Link>
 			<Card 
 				className="mw6 center w-75 w-100-ns ma5"

@@ -5,28 +5,30 @@ import addToCardSVG from '../../assets/add_to_cart.svg';
 import walletSVG from '../../assets/wallet.svg';
 import dashboardSVG from '../../assets/dashboard.svg';*/
 import 'tachyons';
+import Footer from '../Footer/Footer';
 
 export default function LandingPage() {
 	return(
-		<>
+		<body>
 			<NavigationUnregistered />
-				<div class="mw9 center ph3-ns vh-100">
-				  <div class="cf ph2-ns h-100">
-				    <div class="fl w-third pa2">
-				      <div class="outline bg-white pv4"></div>
-				    </div>
-				    <div class="fl w-two-thirds pa2 h-100">
-				      <div class="outline bg-white pv4"></div>
-				    </div>
-				    <div class="fl w-two-thirds pa2 h-100">
-				      <div class="outline bg-white pv4"></div>
-				    </div>
-				    <div class="fl w-third pa2 h-100">
-				      <div class="outline bg-white pv4"></div>
-				    </div>
-				  </div>
-				</div>
-			</>
+			<div class="mw9 center ph3-ns vh-100">
+			  <div class="cf ph2-ns">
+			    <div class="fl w-third pa2">
+			      <div class="outline bg-white pv4"></div>
+			    </div>
+			    <div class="fl w-two-thirds pa2">
+			      <div class="outline bg-white pv4"></div>
+			    </div>
+			    <div class="fl w-two-thirds pa2">
+			      <div class="outline bg-white pv4"></div>
+			    </div>
+			    <div class="fl w-third pa2">
+			      <div class="outline bg-white pv4"></div>
+			    </div>
+			  </div>
+			</div>
+			<Footer />
+		</body>
 	);
 }
 

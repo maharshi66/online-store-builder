@@ -2,6 +2,8 @@ import React, { useRef, useState } from 'react';
 import {Form, Button, Card, Alert} from 'react-bootstrap';
 import { useAuth } from '../../contexts/AuthContext';
 import { Link, useHistory } from 'react-router-dom';
+import BrandHeader from '../BrandHeader/BrandHeader';
+
 
 export default function LogIn() {
 	const emailRef = useRef(); 
@@ -28,10 +30,10 @@ export default function LogIn() {
 	return (
 		<>
 	    	<Link to="/" style={{textDecoration: "none"}}>
-				<h1 className="f2 f1-ns brandText purple pointer tc mt4">
-				Purplish
-				</h1>
-	    	</Link>
+		    	<div className="f2 f1-ns pointer tc mt4">
+			    	<BrandHeader  />
+		    	</div>	    	
+		    </Link>
 			<Card 
 				className="mw6 center w-75 w-100-ns ma5"
 				bg="dark"

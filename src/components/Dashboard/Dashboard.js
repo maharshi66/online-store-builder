@@ -1,39 +1,40 @@
-import React, { useState } from 'react';
+import React from 'react';
 import NavigationRegistered from '../Navigation/NavigationRegistered';
-import { Card, Button, Alert } from 'react-bootstrap';
-import { useAuth } from "../../contexts/AuthContext";
-import { Link, useHistory } from 'react-router-dom';
-
+import { Card, Container, Button } from 'react-bootstrap';
 
 const Dashboard = () => {
-	const [error, setError] = useState('');
-	const { currentUser, logout } = useAuth();
-	const history = useHistory();
-
-	async function handleLogOut() {
-		setError('')
-
-		try{
-			await logout();
-			history.push("/");
-		}catch{
-			setError('Failed to Log Out');
-		}
-	}
-
 	return (
 		<>
 		<NavigationRegistered />
-		<Card className="mw6 center ma5 w-75 w-100-ns">
-			<Card.Body>
-			<h2 className="text-center mb-4">Profile</h2>
-			{error && <Alert variant="danger">{error}</Alert>}
-			<strong>Email:</strong> {currentUser.email}
-			<Link to="update-profile" className="btn btn-primary w-100 mt-3">Update Profile</Link>
-			</Card.Body>
-		</Card>	
-		<div className="w-100 text-center mt-2">
-			<Button variant="link" onClick={handleLogOut}>Log Out</Button>
+		<div className="pb3">
+		<h2 className="f3 f2-ns tc mt2 pa4">Your Stores</h2>
+		<Button size="lg" className="ml5 ml5-ns" variant="success">Create New</Button>
+		<Container className="mw5 mw6-ns mt3 ba b--light-purple br1 pa1 pa3-ns">
+		<Card className="w-90 w-25-ns ma3 pointer">
+		  <Card.Body>
+		    <Card.Title>Store Name</Card.Title>
+		    <Card.Subtitle className="mb-2 text-muted">Store Tagline</Card.Subtitle>
+		    <Card.Text>
+		      Some quick example text to build on the store name and make up the bulk of
+		      the store's content.
+		    </Card.Text>
+		    <Card.Link href="#">Analytics</Card.Link>
+		    <Card.Link href="#">View</Card.Link>
+		  </Card.Body>
+		</Card>
+		<Card className="w-90 w-25-ns ma3 pointer">
+		  <Card.Body>
+		    <Card.Title>Store Name</Card.Title>
+		    <Card.Subtitle className="mb-2 text-muted">Store Tagline</Card.Subtitle>
+		    <Card.Text>
+		      Some quick example text to build on the store name and make up the bulk of
+		      the store's content.
+		    </Card.Text>
+		    <Card.Link href="#">Analytics</Card.Link>
+		    <Card.Link href="#">View</Card.Link>
+		  </Card.Body>
+		</Card>
+		</Container>
 		</div>
 		</>
 	);
