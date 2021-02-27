@@ -2,12 +2,13 @@ import React, { useRef, useState } from 'react';
 import { Form, Button, Card, Alert } from 'react-bootstrap';
 import { useAuth } from '../../contexts/AuthContext';
 import { Link, useHistory } from 'react-router-dom';
+import "tachyons";
 
 export default function SignUp() {
 	const emailRef = useRef(); 
 	const passwordRef = useRef();
 	const passwordConfirmRef = useRef(); 
-	const { signup, currentUser } = useAuth();
+	const { signup } = useAuth();
 	const [error, setError] = useState('');
 	const [loading, setLoading] = useState(false);
 	const history = useHistory();
@@ -30,7 +31,15 @@ export default function SignUp() {
 
 	return (
 		<>
-			<Card className="mw6 center w-75 w-100-ns ma5">
+	    	<Link to="/" style={{textDecoration: "none"}}>
+				<h1 className="f2 f1-ns brandText purple pointer tc mt4">
+				Purplish
+				</h1>
+	    	</Link>
+			<Card 
+				className="mw6 center w-75 w-100-ns ma5"
+				bg="dark"
+			    text="white">
 				<Card.Body>
 					<h2 className="text-center mb-4">Sign Up</h2>
 					{error && <Alert variant="danger">{error}</Alert>}
@@ -52,8 +61,11 @@ export default function SignUp() {
 				</Card.Body>
 			</Card>
 			<div className="w-100 text-center mt-2">
-				Already have an account? <Link to="/login">Log In</Link>
+				Already have an account? <Link to="/login" 
+				className="dim purple pa2 hover-blue mr4" 
+	      		style={{ textDecoration: 'none' }}>Log In</Link>
 			</div>
 		</> 
 	);
 }
+

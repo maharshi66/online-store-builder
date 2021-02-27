@@ -6,7 +6,7 @@ import { Link, useHistory } from 'react-router-dom';
 export default function LogIn() {
 	const emailRef = useRef(); 
 	const passwordRef = useRef();
-	const { login, currentUser } = useAuth();
+	const { login } = useAuth();
 	const [error, setError] = useState('');
 	const [loading, setLoading] = useState(false);
  	const history = useHistory();
@@ -27,7 +27,15 @@ export default function LogIn() {
 
 	return (
 		<>
-			<Card className="mw6 w-75 w-100-ns center ma5">
+	    	<Link to="/" style={{textDecoration: "none"}}>
+				<h1 className="f2 f1-ns brandText purple pointer tc mt4">
+				Purplish
+				</h1>
+	    	</Link>
+			<Card 
+				className="mw6 center w-75 w-100-ns ma5"
+				bg="dark"
+			    text="white">
 				<Card.Body>
 					<h2 className="text-center mb-4">Log In</h2>
 					{error && <Alert variant="danger">{error}</Alert>}
@@ -43,12 +51,17 @@ export default function LogIn() {
 						<Button disabled={loading} className="w-100" type="submit">Submit</Button>					
 					</Form>
 					<div className="w-100 text-center mt-2">
-						<Link to="/forgot-password">Forgot Password?</Link>
+						<Link to="/forgot-password"
+							className="dim light-gray pa2 hover-blue mr4" 
+				      		style={{ textDecoration: 'none' }}>
+				      		Forgot Password?</Link>
 					</div>
 				</Card.Body>
 			</Card>
 			<div className="w-100 text-center mt-2">
-				Don't have an account? <Link to="/signup">Sign Up</Link>
+				Don't have an account? <Link to="/signup" 
+				className="dim purple pa2 hover-blue mr4" 
+	      		style={{ textDecoration: 'none' }}>Sign Up</Link>
 			</div>
 		</> 
 	);
