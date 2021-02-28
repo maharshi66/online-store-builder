@@ -1,6 +1,6 @@
 import React from 'react';
 import StoreCard from "./StoreCard";
-import {Container, Row, Col} from 'react-bootstrap';
+import {Container, Row} from 'react-bootstrap';
 import "tachyons";
 
 const AllStoresList = ({stores}) => {
@@ -10,13 +10,15 @@ const AllStoresList = ({stores}) => {
     	{      		
             stores.map((store, i) => {
             	return (        			
-                        <StoreCard
-            			 title={store.storename} 
-            			 tagline={store.tagline}
-            			 descriptionText="description"
-            			 link1={store.link1}
-            			 link2={store.link2} /> 
-                 );
+                  <StoreCard
+                     key={store.id}
+              			 title={store.storename} 
+              			 tagline={store.tagline}
+              			 descriptionText="description"
+              			 link1={store.link1}
+              			 link2={store.link2}
+                  /> 
+              );
             })
     	}
         </Row>

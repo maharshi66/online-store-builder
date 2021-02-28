@@ -7,16 +7,42 @@ import SearchBar from '../SearchBar/SearchBar';
 import { Container } from 'react-bootstrap';
 import {stores} from '../../stores';
 
-export default function  Dashboard() {
-	return (
-		<>
-		<NavigationRegistered />
-		<Container className="pb3">
-			<AllStoresHeader />
-			<SearchBar />
-			<AllStoresList stores={stores}/>
-		</Container>
-		<Footer />
-		</>
-	);
+class Dashboard extends React.Component {
+	
+	constructor(){
+		super();
+		this.state = {
+			allstores: [],
+ 		    searchfield: ''
+		}
+	}
+
+	componentDidMount() {
+		this.setState({allstores: stores})
+	}
+
+	onSearchChange = (event) => {
+		this.setState({ searchfield: event.target.value })
+	}
+
+	render(){
+		const { allstores, searchfield } = this.state;
+    	const filteredStores = allstores.filter(store =>{
+      		return store.storename.toLowerCase().includes(searchfield.toLowerCase());
+    	});
+		
+		return (
+			<div>
+			<NavigationRegistered />
+			<Container className="pb3">
+				<AllStoresHeader />
+				<SearchBar searchChange={this.onSearchChange}/>
+				<AllStoresList stores={filteredStores}/>
+			</Container>
+			<Footer />
+			</div>
+		);
+	}
 }
+
+export default Dashboard;
