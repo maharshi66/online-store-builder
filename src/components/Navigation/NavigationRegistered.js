@@ -55,7 +55,7 @@ export default function NavigationRegistered() {
 				        	<Link style={{textDecoration: "none"}} className="purple">Settings</Link></NavDropdown.Item>
 				        <NavDropdown.Divider />
 				        <NavDropdown.Item >
-				        	<Button onClick={handleLogOut} className="w-100 purple">Log Out</Button>
+				        	<Link onClick={handleLogOut} className="w-100 purple">Log Out</Link>
 				        </NavDropdown.Item>
 				     </NavDropdown>
 		    </div>

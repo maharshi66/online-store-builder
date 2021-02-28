@@ -4,7 +4,7 @@ import "tachyons";
 
 const StoreCard = ({title, tagline, descriptionText, link1, link2}) => {
   return (
-    <Card className="w-90 w-25-ns ma3 pointer">
+    <Card className="grow w-90 w-25-ns ma3 pointer" style={{borderStyle: "solid"}}>
 		  <Card.Body>
 		    <Card.Title>{title}</Card.Title>
 		    <Card.Subtitle className="mb-2 text-muted">{tagline}</Card.Subtitle>

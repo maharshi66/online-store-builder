@@ -34,7 +34,7 @@ class Dashboard extends React.Component {
 		return (
 			<div>
 			<NavigationRegistered />
-			<Container className="pb3">
+			<Container className="pa3">
 				<AllStoresHeader />
 				<SearchBar searchChange={this.onSearchChange}/>
 				<AllStoresList stores={filteredStores}/>
