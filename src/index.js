@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './containers/App';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "./containers/App.css";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App className="globalFont"/>
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -32,8 +32,9 @@ export default function NavigationRegistered() {
 		    	<BrandHeader />
 		    </Navbar.Brand>
 	      <Navbar.Toggle aria-controls="basic-navbar-nav"/>
-		    <Navbar.Collapse id="responsive-navbar-nav">
+		    <Navbar.Collapse expand="lg" id="responsive-navbar-nav">
 		    <Nav className="ml-auto">
+		    	<div className="flex justify-around">
 		    	<Link to="/explore" style={{textDecoration: "none"}} className="light-purple mr2 pa3 hover-white">
     				<FontAwesomeIcon icon={faCompass} className="w2 h2 mr2" />
     			</Link>
@@ -57,6 +58,7 @@ export default function NavigationRegistered() {
 				        	<Button onClick={handleLogOut} className="w-100 purple">Log Out</Button>
 				        </NavDropdown.Item>
 				     </NavDropdown>
+		    </div>
 		    </Nav>
 		    </Navbar.Collapse>
 		  </Navbar>

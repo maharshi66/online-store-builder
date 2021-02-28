@@ -3,7 +3,6 @@ import { Nav, Navbar } from 'react-bootstrap';
 import "./Navigation.css";
 import { Link } from 'react-router-dom';
 import BrandHeader from '../BrandHeader/BrandHeader';
-import Footer from "../Footer/Footer";
 
 export default function NavigationUnregistered(){
 	return (
