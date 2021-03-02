@@ -9,14 +9,14 @@ import { Alert } from 'react-bootstrap';
 
 const AllStoresList = ({stores}) => {
   return (
+    <div className="ba bw1 b--light-purple br3">
     <Scroll>
-
     { stores.length === 0 
-      ? <Container className="mw6 ba bw1 b--light-purple br3">
+      ? <Container className="mw6 ba bw1 b--purple br3">
           <Alert className="mt2" variant="danger">No store found!</Alert>
           <img src={emptySVG} alt={emptySVG} />
         </Container>
-      : <Container className="mw6 ba bw1 b--light-purple br3 svgBackground" >
+      : <Container className="mw6 svgBackground" >
           <Row className="flex justify-between">
         {         
               stores.map((store, i) => {
@@ -34,11 +34,9 @@ const AllStoresList = ({stores}) => {
         }
           </Row>
     </Container>
-
-
-
     }
     </Scroll>
+    </div>
   )
 }
 

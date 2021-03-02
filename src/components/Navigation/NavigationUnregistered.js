@@ -1,16 +1,14 @@
 import React from 'react';
 import { Nav, Navbar } from 'react-bootstrap'; 
 import "./Navigation.css";
+import NavbarWithBrand from './NavbarWithBrand';
 import { Link } from 'react-router-dom';
-import BrandHeader from '../BrandHeader/BrandHeader';
 
 export default function NavigationUnregistered(){
 	return (
 		<>
 		  <Navbar bg="dark" variant="dark" sticky="top">
-		    <Navbar.Brand>
-		    	<BrandHeader />
-		    </Navbar.Brand>
+		  	<NavbarWithBrand />
 		    <Nav className="ml-auto">
 		      <Link to="/login" 
 		      		className="dim white pa2 hover-light-purple mr4" 

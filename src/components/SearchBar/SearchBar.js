@@ -6,7 +6,7 @@ const SearchBar = ({ searchfield , searchChange }) => {
     <Row className="mt5 mb3">
       <Col>
         <input
-          className='f4 w-100 pa2 br2 white ba b--light-purple bg-near-black'
+          className='f4 w-100 pa2 br4 white ba b--light-purple bg-near-black'
           type='search'
           placeholder='Search stores'
           onChange={searchChange}
