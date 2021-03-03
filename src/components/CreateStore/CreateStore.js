@@ -2,22 +2,21 @@ import React from 'react';
 import "tachyons";
 import NavbarWithBrand from "../Navigation/NavbarWithBrand";
 import CreateStoreBreadcrumb from "./CreateStoreBreadcrumb";
-import StoreInfoForm from "./StoreInfoForm";
+import AllForms from "./AllForms";
 
-class CreateStore extends React.Component {
-  
+class CreateStore extends React.Component {  
   	constructor(props){
   		super(props);
   		this.state = {
-  			count: 1,
+  			count: 0,
   			logoColor: ["light-gray", "near-black", "near-black", "near-black"],
   		}
   	}
 
-  	markActiveGray = (arr, count) => {
+  	markActiveLogo = (arr, count) => {
   		let newarr = arr; 
   		const newnew = newarr.map((logo, i) => {
-  			return i === count ? "light-gray" : "near-black";
+  			return i === (count % 4) ? "light-gray" : "near-black";
   		});
 
   		console.log("newnew: ", newnew);
@@ -25,23 +24,22 @@ class CreateStore extends React.Component {
   	}
 
   	onNextClicked = () => {
-  		// console.log(this.state.count, this.state.logoColor);
-  		if(this.state.count >= 3){
-	  		this.setState({count: 0});
-  		}else{
-	  		this.setState({count: this.state.count + 1});
-  		}
-  		this.setState({logoColor: this.markActiveGray(this.state.logoColor, this.state.count) });
-  	}
+  		this.setState((state) => ({
+          count: ++state.count,      
+          logoColor: this.markActiveLogo(state.logoColor, state.count)
+        })
+      );
+    }
 
   	render(){
-	const {logoColor} = this.state;
-	  return (
+  	const {count, logoColor} = this.state;
+	  
+    return (
 	  	<>
 	    <NavbarWithBrand />
 	    <div>
 	    	<CreateStoreBreadcrumb logoColor={logoColor} />
-	    	<StoreInfoForm onNextClicked={this.onNextClicked} />
+	    	<AllForms currentForm={count} onNextClicked={this.onNextClicked}/>
 	    </div>
 	    </>
 	  )

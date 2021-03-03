@@ -3,8 +3,8 @@ import StoreCard from "./StoreCard";
 import Scroll from "../Scroll/Scroll";
 import {Container, Row} from 'react-bootstrap';
 import "tachyons";
-import "./Stores.css"
-import emptySVG from "../../assets/empty.svg";
+import "../../assets/Styling/background.css"
+import emptySVG from "../../assets/Illustrations/empty.svg";
 import { Alert } from 'react-bootstrap';
 
 const AllStoresList = ({stores}) => {
