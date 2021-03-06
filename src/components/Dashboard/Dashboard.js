@@ -39,7 +39,7 @@ class Dashboard extends React.Component {
 				<SearchBar searchChange={this.onSearchChange}/>
 				<AllStoresList stores={filteredStores}/>
 			</Container>
-			<Footer />
+			<Footer position="relative"/>
 			</div>
 		);
 	}
