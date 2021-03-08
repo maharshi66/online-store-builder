@@ -1,5 +1,7 @@
 import React from 'react';
-import {Form, Button} from 'react-bootstrap';
+import { Row, Col, Form, Button } from 'react-bootstrap';
+import {Link} from 'react-router-dom';
+import Industries from './Industries';
 import "tachyons";
 
 const StoreInfoForm = (props) => {
@@ -10,40 +12,64 @@ const StoreInfoForm = (props) => {
   }
 
   return (
-    <div className="mw4 mw6-ns center">    	
-    	<Form className="mw4 mw6-ns mt5 overflow" onSubmit={handleSubmit}>
+    <div>    	
+    	<h1 className="f4 f5-ns tc">Store Details</h1>
+    	<Form className="mw5 mw6-ns center mt4 mb4" onSubmit={handleSubmit}>
 		  <Form.Group controlId="formBasicText">
-		    <Form.Label>Store Name</Form.Label>
-		    <Form.Control required type="text" placeholder="Your store name" />
+		    <Form.Label>Name</Form.Label>
+		    <Form.Control required type="text" placeholder="BestStoreEva" />
 		  </Form.Group>
 
-  		  <Form.Group>
-		    <Form.Label>Short Description</Form.Label>
-		    <Form.Control required type="text" placeholder="Your store name" />
+		  <Form.Group controlId="exampleForm.ControlTextarea1">
+		    <Form.Label>Description</Form.Label>
+		    <Form.Control as="textarea" rows={3} maxLength={200} placeholder="Add a short description for your awesome store!"/>
 		  </Form.Group>
 		  
 		  <Form.Group>
-		    <Form.Label>Store Tagline</Form.Label>
-		    <Form.Control type="text" placeholder="" />
+		    <Form.Label>Tagline</Form.Label>
+		    <Form.Control type="text" placeholder="Add your catchy tagline" required />
 		  </Form.Group>
 		  
 	     <Form.Group controlId="exampleForm.ControlSelect1">
 		    <Form.Label>Industry</Form.Label>
-		    <Form.Control required as="select">
-		      <option>1</option>
-		      <option>2</option>
-		      <option>3</option>
-		      <option>4</option>
-		      <option>5</option>
+		    <Form.Control as="select" required>
+		    	<Industries />
 		    </Form.Control>
 		  </Form.Group>
-		  
-		  <Button
-		   variant="primary" type="submit" >
-		    Next
-		  </Button>
+
+		  <Row>
+  			<Col>
+		      <Form.Group>
+				    <Form.File id="storeLogo" label="Upload Store Logo" />
+			  </Form.Group>
+			</Col>		
+			<Col>			
+	  	      <Form.Group>
+				    <Form.File id="storeCoverPhoto" label="Upload Cover Photo" />
+			  </Form.Group>
+			</Col>	  	
+		  </Row>
+
+		  <Row className="mt5">
+  			<Col>
+				<Link to="/dashboard">
+				  <Button className="f7 f6-ns w-100 bg-purple"
+				    variant="danger"
+				    type="submit">
+				     Cancel & Quit
+	 		  	  </Button>
+				</Link>
+			</Col>		
+			<Col>
+			  <Button className="w-100 bg-purple"
+			    variant="success"
+			    type="submit" >
+			     Save & Continue
+ 		  	 </Button>
+			</Col>	  	
+		  </Row>
 		</Form>
-		</div>
+	</div>
   )
 }
 

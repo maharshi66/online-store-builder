@@ -37,10 +37,8 @@ class CreateStore extends React.Component {
     return (
 	  	<>
 	    <NavbarWithBrand />
-	    <div>
 	    	<CreateStoreBreadcrumb logoColor={logoColor} />
 	    	<AllForms currentForm={count} onNextClicked={this.onNextClicked}/>
-	    </div>
 	    </>
 	  )
 	}

@@ -3,11 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './containers/App';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import "./containers/App.css";
+import "./assets/Styling/fonts.css";
+import "tachyons";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App className="globalFont"/>
+    <App/>
   </React.StrictMode>,
   document.getElementById('root')
 );

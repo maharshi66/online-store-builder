@@ -6,9 +6,8 @@ import { faArrowRight, faStore, faCreditCard, faFlagCheckered, faMoneyCheck as f
 import "./CreateStore.css";
 
 const CreateStoreBreadcrumb = (props) => {
-
   return (
-    <div className="fixed bg-purple left-0 w-100 h2 flex flex-row justify-around pa1">
+    <div className="bg-purple left-0 w-100 h2 flex flex-row justify-around pa1">
     		<Link className={`${props.logoColor[0]} f6`}>
 	    		<FontAwesomeIcon className="f3 pb2" icon={faStore} size="sm"/>
     		</Link>

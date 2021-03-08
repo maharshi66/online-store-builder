@@ -42,21 +42,23 @@ export default function NavigationRegistered() {
 		    		<FontAwesomeIcon icon={faBell} className="w2 h2 mr2" />
 		    	</Link>		    
 			    	<NavDropdown 
-			    		className="pl3 pl4-ns hover-white"
+			    		className="pl3 pl4-ns"
 			    		menuAlign="right"
 			    		alignRight  
 			    		title={
-		    			<FontAwesomeIcon icon={faUser} className="light-purple mt2 w2 h2 mr2" />}>
-        				{error && <Alert variant="danger">{error}</Alert>}
-						<NavDropdown.Item className="b">{currentUser.email}</NavDropdown.Item>
+		    			<FontAwesomeIcon 
+		    				icon={faUser}
+	    				    className="light-purple mt2 w2 h2 mr2" />}>
+        					{error && <Alert variant="danger">{error}</Alert>}
+						<NavDropdown.Item>{currentUser.email}</NavDropdown.Item>
 				        <NavDropdown.Item >
-				        	<Link to="/update-profile" style={{textDecoration: "none"}} className="purple">Update Profile</Link>
+				        	<Link to="/update-profile" style={{textDecoration: "none"}} className="dark-gray hover-light-purple">Update Profile</Link>
 				        </NavDropdown.Item>
 				        <NavDropdown.Item>
-				        	<Link style={{textDecoration: "none"}} className="purple">Settings</Link></NavDropdown.Item>
+				        	<Link style={{textDecoration: "none"}} className="dark-gray hover-light-purple">Settings</Link></NavDropdown.Item>
 				        <NavDropdown.Divider />
 				        <NavDropdown.Item >
-				        	<Link onClick={handleLogOut} className="w-100 purple">Log Out</Link>
+				        	<Link onClick={handleLogOut} style={{textDecoration: "none"}} className="dark-gray hover-light-purple">Log Out</Link>
 				        </NavDropdown.Item>
 				     </NavDropdown>
 		    </div>

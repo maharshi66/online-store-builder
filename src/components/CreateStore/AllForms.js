@@ -1,7 +1,7 @@
 import React from 'react';
 import StoreInfoForm from './StoreInfoForm';
-import {Button} from 'react-bootstrap';
 import "tachyons"
+
 const AllForms = (props) => {
   const CurrForm = () => {
   	let index = props.currentForm % 4;
@@ -20,13 +20,7 @@ const AllForms = (props) => {
   }
 
   return (
-    <div className="measure center relative">
-		  <Button
-		   variant="primary" onClick={props.onNextClicked} >
-		    Next
-		  </Button>
-    	<CurrForm />
-    </div>
+	<CurrForm />
   )
 }
 

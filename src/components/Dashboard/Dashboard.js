@@ -6,6 +6,7 @@ import AllStoresList from '../Stores/AllStoresList';
 import SearchBar from '../SearchBar/SearchBar';
 import { Container } from 'react-bootstrap';
 import {stores} from '../../stores';
+import '../../assets/Styling/fonts.css';
 
 class Dashboard extends React.Component {
 	
@@ -32,7 +33,7 @@ class Dashboard extends React.Component {
     	});
 		
 		return (
-			<div>
+			<div className="globalFont">
 			<NavigationRegistered />
 			<Container className="pa3">
 				<AllStoresHeader />
