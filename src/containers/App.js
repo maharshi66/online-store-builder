@@ -9,9 +9,10 @@ import CreateStore from '../components/CreateStore/CreateStore';
 import PrivateRouter from '../components/PrivateRouter/PrivateRouter';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import { AuthProvider } from '../contexts/AuthContext';
+import "tachyons";
 
 function App() {
-  return (
+  return (    
     <AuthProvider>
         <Router>
       		<Switch>

@@ -39,32 +39,32 @@ export default function SignUp() {
 		    	</div>
 	    	</Link>
 			<Card 
+				style={{background: "#b19cd9"}}
 				className="mw6 center w-75 w-100-ns ma5"
-				bg="dark"
 			    text="white">
 				<Card.Body>
-					<h2 className="text-center mb-4">Sign Up</h2>
+					<h2 className="tc f2-ns f4 mb-4">Sign Up</h2>
 					{error && <Alert variant="danger">{error}</Alert>}
 					<Form onSubmit={handleSubmit} >
 						<Form.Group id='email'>
-							<Form.Label>Email</Form.Label>
+							<Form.Label className="f5-ns f7">Email</Form.Label>
 							<Form.Control type="email" ref={emailRef} required />
 						</Form.Group>
 						<Form.Group id='password'>
-							<Form.Label>Password</Form.Label>
+							<Form.Label className="f5-ns f7">Password</Form.Label>
 							<Form.Control type="password" ref={passwordRef} required />
 						</Form.Group>
 						<Form.Group id='password-confirm'>
-							<Form.Label>Confirm Password</Form.Label>
+							<Form.Label className="f5-ns f7">Confirm Password</Form.Label>
 							<Form.Control type="password" ref={passwordConfirmRef} required />
 						</Form.Group>
-						<Button disabled={loading} className="w-100" type="submit">Create Account</Button>					
+						<Button disabled={loading} className="w-100" variant="success" type="submit">Create Account</Button>					
 					</Form>
 				</Card.Body>
 			</Card>
-			<div className="w-100 text-center mt-2">
+			<div className="w-100 text-center">
 				Already have an account? <Link to="/login" 
-				className="dim purple pa2 hover-blue mr4" 
+				className="dim purple pa2 hover-blue" 
 	      		style={{ textDecoration: 'none' }}>Log In</Link>
 			</div>
 		</> 

@@ -4,7 +4,6 @@ import { useAuth } from '../../contexts/AuthContext';
 import { Link, useHistory } from 'react-router-dom';
 import BrandHeader from '../BrandHeader/BrandHeader';
 
-
 export default function LogIn() {
 	const emailRef = useRef(); 
 	const passwordRef = useRef();
@@ -35,37 +34,38 @@ export default function LogIn() {
 		    	</div>	    	
 		    </Link>
 			<Card 
-				className="mw6 center w-75 w-100-ns ma5"
-				bg="dark"
+				style={{background: "#b19cd9"}}
+				className="mw6 center w-75 w-100-ns ma5 h6"
 			    text="white">
 				<Card.Body>
-					<h2 className="text-center mb-4">Log In</h2>
+					<h2 className="tc f2-ns f4 mb-4">Log In</h2>
 					{error && <Alert variant="danger">{error}</Alert>}
 					<Form onSubmit={handleSubmit}>
-						<Form.Group id='email'>
+						<Form.Group  className="f5-ns f7" id='email'>
 							<Form.Label>Email</Form.Label>
 							<Form.Control type="email" ref={emailRef} required />
 						</Form.Group>
-						<Form.Group id='password'>
+						<Form.Group className="f5-ns f7" id='password'>
 							<Form.Label>Password</Form.Label>
 							<Form.Control type="password" ref={passwordRef} required />
 						</Form.Group>
-						<Button disabled={loading} className="w-100" type="submit">Submit</Button>					
+						<Button disabled={loading} className="w-100 bg-light-purple" variant="success" type="submit">Submit</Button>					
 					</Form>
-					<div className="w-100 text-center mt-2">
+					<div className="w-100 tc mt-2">
 						<Link to="/forgot-password"
-							className="dim light-gray pa2 hover-blue mr4" 
+							className="dim f6-ns f7 light-gray pa2 hover-blue" 
 				      		style={{ textDecoration: 'none' }}>
 				      		Forgot Password?</Link>
 					</div>
 				</Card.Body>
 			</Card>
-			<div className="w-100 text-center mt-2">
-				Don't have an account? <Link to="/signup" 
-				className="dim purple pa2 hover-blue mr4" 
-	      		style={{ textDecoration: 'none' }}>Sign Up</Link>
+			<div className="w-100 tc f5-ns f7">
+				Don't have an account? 
+				<Link to="/signup" 
+					className="dim purple pa2 hover-blue" 
+		      		style={{ textDecoration: 'none' }}>Sign Up
+	      		</Link>
 			</div>
 		</> 
 	);
 }
-

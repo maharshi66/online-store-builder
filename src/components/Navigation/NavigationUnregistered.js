@@ -7,7 +7,7 @@ export default function NavigationUnregistered(){
 	return (
 		<>
 		  <Navbar sticky="top">
-		  	<h1 className="f2-ns f5 brandFontFamily light-purple">Purplish</h1>
+		  	<h1 className="f2-ns f3 brandFontFamily white">Purplish</h1>
 		    <Nav className="ml-auto">
 		      <Link to="/login" 
 		      		className="dim white b f7 f6-ns pa2 hover-light-gray mr4-ns mr1" 
